@@ -1,0 +1,18 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "yarn dev"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+[services]
+[[services]]
+name = "medusa-backend"
+source = "."
+
+[[services]]
+name = "postgres"
+image = "postgres:15"
