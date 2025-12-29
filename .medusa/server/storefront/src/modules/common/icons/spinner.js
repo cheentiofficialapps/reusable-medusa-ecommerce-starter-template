@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const Spinner = ({ size = "16", color = "currentColor", ...attributes }) => {
+    return ((0, jsx_runtime_1.jsxs)("svg", { className: "animate-spin", width: size, height: size, xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", ...attributes, children: [(0, jsx_runtime_1.jsx)("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: color, strokeWidth: "4" }), (0, jsx_runtime_1.jsx)("path", { className: "opacity-75", fill: color, d: "M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" })] }));
+};
+exports.default = Spinner;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3Bpbm5lci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3N0b3JlZnJvbnQvc3JjL21vZHVsZXMvY29tbW9uL2ljb25zL3NwaW5uZXIudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUlBLE1BQU0sT0FBTyxHQUF3QixDQUFDLEVBQ3BDLElBQUksR0FBRyxJQUFJLEVBQ1gsS0FBSyxHQUFHLGNBQWMsRUFDdEIsR0FBRyxVQUFVLEVBQ2QsRUFBRSxFQUFFO0lBQ0gsT0FBTyxDQUNMLGlDQUNFLFNBQVMsRUFBQyxjQUFjLEVBQ3hCLEtBQUssRUFBRSxJQUFJLEVBQ1gsTUFBTSxFQUFFLElBQUksRUFDWixLQUFLLEVBQUMsNEJBQTRCLEVBQ2xDLElBQUksRUFBQyxNQUFNLEVBQ1gsT0FBTyxFQUFDLFdBQVcsS0FDZixVQUFVLGFBRWQsbUNBQ0UsU0FBUyxFQUFDLFlBQVksRUFDdEIsRUFBRSxFQUFDLElBQUksRUFDUCxFQUFFLEVBQUMsSUFBSSxFQUNQLENBQUMsRUFBQyxJQUFJLEVBQ04sTUFBTSxFQUFFLEtBQUssRUFDYixXQUFXLEVBQUMsR0FBRyxHQUNQLEVBQ1YsaUNBQ0UsU0FBUyxFQUFDLFlBQVksRUFDdEIsSUFBSSxFQUFFLEtBQUssRUFDWCxDQUFDLEVBQUMsaUhBQWlILEdBQzdHLElBQ0osQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsT0FBTyxDQUFBIn0=

@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const ui_1 = require("@medusajs/ui");
+const CheckboxWithLabel = ({ checked = true, onChange, label, name, 'data-testid': dataTestId }) => {
+    return ((0, jsx_runtime_1.jsxs)("div", { className: "flex items-center space-x-2 ", children: [(0, jsx_runtime_1.jsx)(ui_1.Checkbox, { className: "text-base-regular flex items-center gap-x-2", id: "checkbox", role: "checkbox", type: "button", checked: checked, "aria-checked": checked, onClick: onChange, name: name, "data-testid": dataTestId }), (0, jsx_runtime_1.jsx)(ui_1.Label, { htmlFor: "checkbox", className: "!transform-none !txt-medium", size: "large", children: label })] }));
+};
+exports.default = CheckboxWithLabel;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9zdG9yZWZyb250L3NyYy9tb2R1bGVzL2NvbW1vbi9jb21wb25lbnRzL2NoZWNrYm94L2luZGV4LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxxQ0FBOEM7QUFXOUMsTUFBTSxpQkFBaUIsR0FBNEIsQ0FBQyxFQUNsRCxPQUFPLEdBQUcsSUFBSSxFQUNkLFFBQVEsRUFDUixLQUFLLEVBQ0wsSUFBSSxFQUNKLGFBQWEsRUFBRSxVQUFVLEVBQzFCLEVBQUUsRUFBRTtJQUNILE9BQU8sQ0FDTCxpQ0FBSyxTQUFTLEVBQUMsOEJBQThCLGFBQzNDLHVCQUFDLGFBQVEsSUFDUCxTQUFTLEVBQUMsNkNBQTZDLEVBQ3ZELEVBQUUsRUFBQyxVQUFVLEVBQ2IsSUFBSSxFQUFDLFVBQVUsRUFDZixJQUFJLEVBQUMsUUFBUSxFQUNiLE9BQU8sRUFBRSxPQUFPLGtCQUNGLE9BQU8sRUFDckIsT0FBTyxFQUFFLFFBQVEsRUFDakIsSUFBSSxFQUFFLElBQUksaUJBQ0csVUFBVSxHQUN2QixFQUNGLHVCQUFDLFVBQUssSUFDSixPQUFPLEVBQUMsVUFBVSxFQUNsQixTQUFTLEVBQUMsNkJBQTZCLEVBQ3ZDLElBQUksRUFBQyxPQUFPLFlBRVgsS0FBSyxHQUNBLElBQ0osQ0FDUCxDQUFBO0FBQ0gsQ0FBQyxDQUFBO0FBRUQsa0JBQWUsaUJBQWlCLENBQUEifQ==

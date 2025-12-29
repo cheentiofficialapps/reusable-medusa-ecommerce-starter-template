@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const PayPal = () => {
+    return ((0, jsx_runtime_1.jsxs)("svg", { xmlns: "http://www.w3.org/2000/svg", height: "20", width: "20", viewBox: "0 0 26 25", id: "paypalIcon", children: [(0, jsx_runtime_1.jsx)("path", { fill: "none", stroke: "#303c42", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", d: "M6.9 20.5H2c-.6 0-.5-.1-.5-.5s2.9-18 3-18.5.5-1 1-1h10c2.8 0 5 2.2 5 5h0c0 4.4-3.6 8-8 8H7.9" }), (0, jsx_runtime_1.jsx)("path", { fill: "none", stroke: "#303c42", strokeWidth: "2", strokeLinecap: "round", strokeLinejoin: "round", d: "M7 23.5c-.3 0-.5-.2-.5-.5 0 0 0 0 0 0 0-.3 2.4-16 2.5-16.5s.3-1 1-1h7.5c2.8 0 5 2.2 5 5h0c0 3.9-3.1 7-7 7h-2l-1 6H7z" })] }));
+};
+exports.default = PayPal;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGF5cGFsLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vLi4vLi4vc3RvcmVmcm9udC9zcmMvbW9kdWxlcy9jb21tb24vaWNvbnMvcGF5cGFsLnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSxNQUFNLE1BQU0sR0FBRyxHQUFHLEVBQUU7SUFDbEIsT0FBTyxDQUNMLGlDQUNFLEtBQUssRUFBQyw0QkFBNEIsRUFDbEMsTUFBTSxFQUFDLElBQUksRUFDWCxLQUFLLEVBQUMsSUFBSSxFQUNWLE9BQU8sRUFBQyxXQUFXLEVBQ25CLEVBQUUsRUFBQyxZQUFZLGFBRWYsaUNBQ0UsSUFBSSxFQUFDLE1BQU0sRUFDWCxNQUFNLEVBQUMsU0FBUyxFQUNoQixXQUFXLEVBQUMsR0FBRyxFQUNmLGFBQWEsRUFBQyxPQUFPLEVBQ3JCLGNBQWMsRUFBQyxPQUFPLEVBQ3RCLENBQUMsRUFBQyw4RkFBOEYsR0FDMUYsRUFDUixpQ0FDRSxJQUFJLEVBQUMsTUFBTSxFQUNYLE1BQU0sRUFBQyxTQUFTLEVBQ2hCLFdBQVcsRUFBQyxHQUFHLEVBQ2YsYUFBYSxFQUFDLE9BQU8sRUFDckIsY0FBYyxFQUFDLE9BQU8sRUFDdEIsQ0FBQyxFQUFDLHNIQUFzSCxHQUNsSCxJQUNKLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLE1BQU0sQ0FBQSJ9

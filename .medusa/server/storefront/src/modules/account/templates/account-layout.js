@@ -1,0 +1,13 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const interactive_link_1 = __importDefault(require("@modules/common/components/interactive-link"));
+const account_nav_1 = __importDefault(require("../components/account-nav"));
+const AccountLayout = ({ customer, children, }) => {
+    return ((0, jsx_runtime_1.jsx)("div", { className: "flex-1 small:py-12", "data-testid": "account-page", children: (0, jsx_runtime_1.jsxs)("div", { className: "flex-1 content-container h-full max-w-5xl mx-auto bg-white flex flex-col", children: [(0, jsx_runtime_1.jsxs)("div", { className: "grid grid-cols-1  small:grid-cols-[240px_1fr] py-12", children: [(0, jsx_runtime_1.jsx)("div", { children: customer && (0, jsx_runtime_1.jsx)(account_nav_1.default, { customer: customer }) }), (0, jsx_runtime_1.jsx)("div", { className: "flex-1", children: children })] }), (0, jsx_runtime_1.jsxs)("div", { className: "flex flex-col small:flex-row items-end justify-between small:border-t border-gray-200 py-12 gap-8", children: [(0, jsx_runtime_1.jsxs)("div", { children: [(0, jsx_runtime_1.jsx)("h3", { className: "text-xl-semi mb-4", children: "Got questions?" }), (0, jsx_runtime_1.jsx)("span", { className: "txt-medium", children: "You can find frequently asked questions and answers on our customer service page." })] }), (0, jsx_runtime_1.jsx)("div", { children: (0, jsx_runtime_1.jsx)(interactive_link_1.default, { href: "/customer-service", children: "Customer Service" }) })] })] }) }));
+};
+exports.default = AccountLayout;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWNjb3VudC1sYXlvdXQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9zdG9yZWZyb250L3NyYy9tb2R1bGVzL2FjY291bnQvdGVtcGxhdGVzL2FjY291bnQtbGF5b3V0LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7QUFFQSxtR0FBdUU7QUFFdkUsNEVBQWtEO0FBUWxELE1BQU0sYUFBYSxHQUFpQyxDQUFDLEVBQ25ELFFBQVEsRUFDUixRQUFRLEdBQ1QsRUFBRSxFQUFFO0lBQ0gsT0FBTyxDQUNMLGdDQUFLLFNBQVMsRUFBQyxvQkFBb0IsaUJBQWEsY0FBYyxZQUM1RCxpQ0FBSyxTQUFTLEVBQUMsMEVBQTBFLGFBQ3ZGLGlDQUFLLFNBQVMsRUFBQyxxREFBcUQsYUFDbEUsMENBQU0sUUFBUSxJQUFJLHVCQUFDLHFCQUFVLElBQUMsUUFBUSxFQUFFLFFBQVEsR0FBSSxHQUFPLEVBQzNELGdDQUFLLFNBQVMsRUFBQyxRQUFRLFlBQUUsUUFBUSxHQUFPLElBQ3BDLEVBQ04saUNBQUssU0FBUyxFQUFDLG1HQUFtRyxhQUNoSCw0Q0FDRSwrQkFBSSxTQUFTLEVBQUMsbUJBQW1CLCtCQUFvQixFQUNyRCxpQ0FBTSxTQUFTLEVBQUMsWUFBWSxrR0FHckIsSUFDSCxFQUNOLDBDQUNFLHVCQUFDLDBCQUFhLElBQUMsSUFBSSxFQUFDLG1CQUFtQixpQ0FFdkIsR0FDWixJQUNGLElBQ0YsR0FDRixDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxhQUFhLENBQUEifQ==

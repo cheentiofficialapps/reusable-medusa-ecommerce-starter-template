@@ -1,0 +1,15 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = TransferPage;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const ui_1 = require("@medusajs/ui");
+const transfer_actions_1 = __importDefault(require("@modules/order/components/transfer-actions"));
+const transfer_image_1 = __importDefault(require("@modules/order/components/transfer-image"));
+async function TransferPage({ params, }) {
+    const { id, token } = params;
+    return ((0, jsx_runtime_1.jsxs)("div", { className: "flex flex-col gap-y-4 items-start w-2/5 mx-auto mt-10 mb-20", children: [(0, jsx_runtime_1.jsx)(transfer_image_1.default, {}), (0, jsx_runtime_1.jsxs)("div", { className: "flex flex-col gap-y-6", children: [(0, jsx_runtime_1.jsxs)(ui_1.Heading, { level: "h1", className: "text-xl text-zinc-900", children: ["Transfer request for order ", id] }), (0, jsx_runtime_1.jsxs)(ui_1.Text, { className: "text-zinc-600", children: ["You've received a request to transfer ownership of your order (", id, "). If you agree to this request, you can approve the transfer by clicking the button below."] }), (0, jsx_runtime_1.jsx)("div", { className: "w-full h-px bg-zinc-200" }), (0, jsx_runtime_1.jsx)(ui_1.Text, { className: "text-zinc-600", children: "If you accept, the new owner will take over all responsibilities and permissions associated with this order." }), (0, jsx_runtime_1.jsx)(ui_1.Text, { className: "text-zinc-600", children: "If you do not recognize this request or wish to retain ownership, no further action is required." }), (0, jsx_runtime_1.jsx)("div", { className: "w-full h-px bg-zinc-200" }), (0, jsx_runtime_1.jsx)(transfer_actions_1.default, { id: id, token: token })] })] }));
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3N0b3JlZnJvbnQvc3JjL2FwcC9bY291bnRyeUNvZGVdLyhtYWluKS9vcmRlci9baWRdL3RyYW5zZmVyL1t0b2tlbl0vcGFnZS50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7QUFJQSwrQkFpQ0M7O0FBckNELHFDQUE0QztBQUM1QyxrR0FBd0U7QUFDeEUsOEZBQW9FO0FBRXJELEtBQUssVUFBVSxZQUFZLENBQUMsRUFDekMsTUFBTSxHQUdQO0lBQ0MsTUFBTSxFQUFFLEVBQUUsRUFBRSxLQUFLLEVBQUUsR0FBRyxNQUFNLENBQUE7SUFFNUIsT0FBTyxDQUNMLGlDQUFLLFNBQVMsRUFBQyw2REFBNkQsYUFDMUUsdUJBQUMsd0JBQWEsS0FBRyxFQUNqQixpQ0FBSyxTQUFTLEVBQUMsdUJBQXVCLGFBQ3BDLHdCQUFDLFlBQU8sSUFBQyxLQUFLLEVBQUMsSUFBSSxFQUFDLFNBQVMsRUFBQyx1QkFBdUIsNENBQ3ZCLEVBQUUsSUFDdEIsRUFDVix3QkFBQyxTQUFJLElBQUMsU0FBUyxFQUFDLGVBQWUsZ0ZBQ3VDLEVBQUUsbUdBR2pFLEVBQ1AsZ0NBQUssU0FBUyxFQUFDLHlCQUF5QixHQUFHLEVBQzNDLHVCQUFDLFNBQUksSUFBQyxTQUFTLEVBQUMsZUFBZSw2SEFHeEIsRUFDUCx1QkFBQyxTQUFJLElBQUMsU0FBUyxFQUFDLGVBQWUsaUhBR3hCLEVBQ1AsZ0NBQUssU0FBUyxFQUFDLHlCQUF5QixHQUFHLEVBQzNDLHVCQUFDLDBCQUFlLElBQUMsRUFBRSxFQUFFLEVBQUUsRUFBRSxLQUFLLEVBQUUsS0FBSyxHQUFJLElBQ3JDLElBQ0YsQ0FDUCxDQUFBO0FBQ0gsQ0FBQyJ9

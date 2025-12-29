@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const X = ({ size = "20", color = "currentColor", ...attributes }) => {
+    return ((0, jsx_runtime_1.jsxs)("svg", { width: size, height: size, viewBox: "0 0 20 20", fill: "none", xmlns: "http://www.w3.org/2000/svg", ...attributes, children: [(0, jsx_runtime_1.jsx)("path", { d: "M15 5L5 15", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }), (0, jsx_runtime_1.jsx)("path", { d: "M5 5L15 15", stroke: color, strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" })] }));
+};
+exports.default = X;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoieC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uL3N0b3JlZnJvbnQvc3JjL21vZHVsZXMvY29tbW9uL2ljb25zL3gudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUlBLE1BQU0sQ0FBQyxHQUF3QixDQUFDLEVBQzlCLElBQUksR0FBRyxJQUFJLEVBQ1gsS0FBSyxHQUFHLGNBQWMsRUFDdEIsR0FBRyxVQUFVLEVBQ2QsRUFBRSxFQUFFO0lBQ0gsT0FBTyxDQUNMLGlDQUNFLEtBQUssRUFBRSxJQUFJLEVBQ1gsTUFBTSxFQUFFLElBQUksRUFDWixPQUFPLEVBQUMsV0FBVyxFQUNuQixJQUFJLEVBQUMsTUFBTSxFQUNYLEtBQUssRUFBQyw0QkFBNEIsS0FDOUIsVUFBVSxhQUVkLGlDQUNFLENBQUMsRUFBQyxZQUFZLEVBQ2QsTUFBTSxFQUFFLEtBQUssRUFDYixXQUFXLEVBQUMsS0FBSyxFQUNqQixhQUFhLEVBQUMsT0FBTyxFQUNyQixjQUFjLEVBQUMsT0FBTyxHQUN0QixFQUNGLGlDQUNFLENBQUMsRUFBQyxZQUFZLEVBQ2QsTUFBTSxFQUFFLEtBQUssRUFDYixXQUFXLEVBQUMsS0FBSyxFQUNqQixhQUFhLEVBQUMsT0FBTyxFQUNyQixjQUFjLEVBQUMsT0FBTyxHQUN0QixJQUNFLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLENBQUMsQ0FBQSJ9

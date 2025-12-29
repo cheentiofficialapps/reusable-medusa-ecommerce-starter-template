@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const SkeletonOrderConfirmedHeader = () => {
+    return ((0, jsx_runtime_1.jsxs)("div", { className: "flex flex-col gap-y-2 pb-10 animate-pulse", children: [(0, jsx_runtime_1.jsx)("div", { className: "w-2/5 h-4 bg-gray-100" }), (0, jsx_runtime_1.jsx)("div", { className: "w-3/6 h-6 bg-gray-100" }), (0, jsx_runtime_1.jsxs)("div", { className: "flex gap-x-4", children: [(0, jsx_runtime_1.jsx)("div", { className: "w-16 h-4 bg-gray-100" }), (0, jsx_runtime_1.jsx)("div", { className: "w-12 h-4 bg-gray-100" })] })] }));
+};
+exports.default = SkeletonOrderConfirmedHeader;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9zdG9yZWZyb250L3NyYy9tb2R1bGVzL3NrZWxldG9ucy9jb21wb25lbnRzL3NrZWxldG9uLW9yZGVyLWNvbmZpcm1lZC1oZWFkZXIvaW5kZXgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLE1BQU0sNEJBQTRCLEdBQUcsR0FBRyxFQUFFO0lBQ3hDLE9BQU8sQ0FDTCxpQ0FBSyxTQUFTLEVBQUMsMkNBQTJDLGFBQ3hELGdDQUFLLFNBQVMsRUFBQyx1QkFBdUIsR0FBTyxFQUM3QyxnQ0FBSyxTQUFTLEVBQUMsdUJBQXVCLEdBQU8sRUFDN0MsaUNBQUssU0FBUyxFQUFDLGNBQWMsYUFDM0IsZ0NBQUssU0FBUyxFQUFDLHNCQUFzQixHQUFPLEVBQzVDLGdDQUFLLFNBQVMsRUFBQyxzQkFBc0IsR0FBTyxJQUN4QyxJQUNGLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLDRCQUE0QixDQUFBIn0=

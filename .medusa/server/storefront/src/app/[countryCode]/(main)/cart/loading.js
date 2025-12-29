@@ -1,0 +1,12 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Loading;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const skeleton_cart_page_1 = __importDefault(require("@modules/skeletons/templates/skeleton-cart-page"));
+function Loading() {
+    return (0, jsx_runtime_1.jsx)(skeleton_cart_page_1.default, {});
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibG9hZGluZy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uLy4uLy4uL3N0b3JlZnJvbnQvc3JjL2FwcC9bY291bnRyeUNvZGVdLyhtYWluKS9jYXJ0L2xvYWRpbmcudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7O0FBRUEsMEJBRUM7O0FBSkQseUdBQThFO0FBRTlFLFNBQXdCLE9BQU87SUFDN0IsT0FBTyx1QkFBQyw0QkFBZ0IsS0FBRyxDQUFBO0FBQzdCLENBQUMifQ==

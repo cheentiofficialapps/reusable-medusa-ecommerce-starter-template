@@ -1,0 +1,68 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const ui_1 = require("@medusajs/ui");
+const checkbox_1 = __importDefault(require("@modules/common/components/checkbox"));
+const input_1 = __importDefault(require("@modules/common/components/input"));
+const lodash_1 = require("lodash");
+const react_1 = require("react");
+const address_select_1 = __importDefault(require("../address-select"));
+const country_select_1 = __importDefault(require("../country-select"));
+const ShippingAddress = ({ customer, cart, checked, onChange, }) => {
+    const [formData, setFormData] = (0, react_1.useState)({
+        "shipping_address.first_name": cart?.shipping_address?.first_name || "",
+        "shipping_address.last_name": cart?.shipping_address?.last_name || "",
+        "shipping_address.address_1": cart?.shipping_address?.address_1 || "",
+        "shipping_address.company": cart?.shipping_address?.company || "",
+        "shipping_address.postal_code": cart?.shipping_address?.postal_code || "",
+        "shipping_address.city": cart?.shipping_address?.city || "",
+        "shipping_address.country_code": cart?.shipping_address?.country_code || "",
+        "shipping_address.province": cart?.shipping_address?.province || "",
+        "shipping_address.phone": cart?.shipping_address?.phone || "",
+        email: cart?.email || "",
+    });
+    const countriesInRegion = (0, react_1.useMemo)(() => cart?.region?.countries?.map((c) => c.iso_2), [cart?.region]);
+    // check if customer has saved addresses that are in the current region
+    const addressesInRegion = (0, react_1.useMemo)(() => customer?.addresses.filter((a) => a.country_code && countriesInRegion?.includes(a.country_code)), [customer?.addresses, countriesInRegion]);
+    const setFormAddress = (address, email) => {
+        address &&
+            setFormData((prevState) => ({
+                ...prevState,
+                "shipping_address.first_name": address?.first_name || "",
+                "shipping_address.last_name": address?.last_name || "",
+                "shipping_address.address_1": address?.address_1 || "",
+                "shipping_address.company": address?.company || "",
+                "shipping_address.postal_code": address?.postal_code || "",
+                "shipping_address.city": address?.city || "",
+                "shipping_address.country_code": address?.country_code || "",
+                "shipping_address.province": address?.province || "",
+                "shipping_address.phone": address?.phone || "",
+            }));
+        email &&
+            setFormData((prevState) => ({
+                ...prevState,
+                email: email,
+            }));
+    };
+    (0, react_1.useEffect)(() => {
+        // Ensure cart is not null and has a shipping_address before setting form data
+        if (cart && cart.shipping_address) {
+            setFormAddress(cart?.shipping_address, cart?.email);
+        }
+        if (cart && !cart.email && customer?.email) {
+            setFormAddress(undefined, customer.email);
+        }
+    }, [cart]); // Add cart as a dependency
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+    return ((0, jsx_runtime_1.jsxs)(jsx_runtime_1.Fragment, { children: [customer && (addressesInRegion?.length || 0) > 0 && ((0, jsx_runtime_1.jsxs)(ui_1.Container, { className: "mb-6 flex flex-col gap-y-4 p-5", children: [(0, jsx_runtime_1.jsx)("p", { className: "text-small-regular", children: `Hi ${customer.first_name}, do you want to use one of your saved addresses?` }), (0, jsx_runtime_1.jsx)(address_select_1.default, { addresses: customer.addresses, addressInput: (0, lodash_1.mapKeys)(formData, (_, key) => key.replace("shipping_address.", "")), onSelect: setFormAddress })] })), (0, jsx_runtime_1.jsxs)("div", { className: "grid grid-cols-2 gap-4", children: [(0, jsx_runtime_1.jsx)(input_1.default, { label: "First name", name: "shipping_address.first_name", autoComplete: "given-name", value: formData["shipping_address.first_name"], onChange: handleChange, required: true, "data-testid": "shipping-first-name-input" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "Last name", name: "shipping_address.last_name", autoComplete: "family-name", value: formData["shipping_address.last_name"], onChange: handleChange, required: true, "data-testid": "shipping-last-name-input" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "Address", name: "shipping_address.address_1", autoComplete: "address-line1", value: formData["shipping_address.address_1"], onChange: handleChange, required: true, "data-testid": "shipping-address-input" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "Company", name: "shipping_address.company", value: formData["shipping_address.company"], onChange: handleChange, autoComplete: "organization", "data-testid": "shipping-company-input" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "Postal code", name: "shipping_address.postal_code", autoComplete: "postal-code", value: formData["shipping_address.postal_code"], onChange: handleChange, required: true, "data-testid": "shipping-postal-code-input" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "City", name: "shipping_address.city", autoComplete: "address-level2", value: formData["shipping_address.city"], onChange: handleChange, required: true, "data-testid": "shipping-city-input" }), (0, jsx_runtime_1.jsx)(country_select_1.default, { name: "shipping_address.country_code", autoComplete: "country", region: cart?.region, value: formData["shipping_address.country_code"], onChange: handleChange, required: true, "data-testid": "shipping-country-select" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "State / Province", name: "shipping_address.province", autoComplete: "address-level1", value: formData["shipping_address.province"], onChange: handleChange, "data-testid": "shipping-province-input" })] }), (0, jsx_runtime_1.jsx)("div", { className: "my-8", children: (0, jsx_runtime_1.jsx)(checkbox_1.default, { label: "Billing address same as shipping address", name: "same_as_billing", checked: checked, onChange: onChange, "data-testid": "billing-address-checkbox" }) }), (0, jsx_runtime_1.jsxs)("div", { className: "grid grid-cols-2 gap-4 mb-4", children: [(0, jsx_runtime_1.jsx)(input_1.default, { label: "Email", name: "email", type: "email", title: "Enter a valid email address.", autoComplete: "email", value: formData.email, onChange: handleChange, required: true, "data-testid": "shipping-email-input" }), (0, jsx_runtime_1.jsx)(input_1.default, { label: "Phone", name: "shipping_address.phone", autoComplete: "tel", value: formData["shipping_address.phone"], onChange: handleChange, "data-testid": "shipping-phone-input" })] })] }));
+};
+exports.default = ShippingAddress;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9zdG9yZWZyb250L3NyYy9tb2R1bGVzL2NoZWNrb3V0L2NvbXBvbmVudHMvc2hpcHBpbmctYWRkcmVzcy9pbmRleC50c3giXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQ0EscUNBQXdDO0FBQ3hDLG1GQUEwRDtBQUMxRCw2RUFBb0Q7QUFDcEQsbUNBQWdDO0FBQ2hDLGlDQUEyRDtBQUMzRCx1RUFBNkM7QUFDN0MsdUVBQTZDO0FBRTdDLE1BQU0sZUFBZSxHQUFHLENBQUMsRUFDdkIsUUFBUSxFQUNSLElBQUksRUFDSixPQUFPLEVBQ1AsUUFBUSxHQU1ULEVBQUUsRUFBRTtJQUNILE1BQU0sQ0FBQyxRQUFRLEVBQUUsV0FBVyxDQUFDLEdBQUcsSUFBQSxnQkFBUSxFQUFzQjtRQUM1RCw2QkFBNkIsRUFBRSxJQUFJLEVBQUUsZ0JBQWdCLEVBQUUsVUFBVSxJQUFJLEVBQUU7UUFDdkUsNEJBQTRCLEVBQUUsSUFBSSxFQUFFLGdCQUFnQixFQUFFLFNBQVMsSUFBSSxFQUFFO1FBQ3JFLDRCQUE0QixFQUFFLElBQUksRUFBRSxnQkFBZ0IsRUFBRSxTQUFTLElBQUksRUFBRTtRQUNyRSwwQkFBMEIsRUFBRSxJQUFJLEVBQUUsZ0JBQWdCLEVBQUUsT0FBTyxJQUFJLEVBQUU7UUFDakUsOEJBQThCLEVBQUUsSUFBSSxFQUFFLGdCQUFnQixFQUFFLFdBQVcsSUFBSSxFQUFFO1FBQ3pFLHVCQUF1QixFQUFFLElBQUksRUFBRSxnQkFBZ0IsRUFBRSxJQUFJLElBQUksRUFBRTtRQUMzRCwrQkFBK0IsRUFBRSxJQUFJLEVBQUUsZ0JBQWdCLEVBQUUsWUFBWSxJQUFJLEVBQUU7UUFDM0UsMkJBQTJCLEVBQUUsSUFBSSxFQUFFLGdCQUFnQixFQUFFLFFBQVEsSUFBSSxFQUFFO1FBQ25FLHdCQUF3QixFQUFFLElBQUksRUFBRSxnQkFBZ0IsRUFBRSxLQUFLLElB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

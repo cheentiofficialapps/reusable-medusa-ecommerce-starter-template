@@ -1,0 +1,36 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_1 = require("@headlessui/react");
+const ui_1 = require("@medusajs/ui");
+const react_2 = require("react");
+const use_toggle_state_1 = __importDefault(require("@lib/hooks/use-toggle-state"));
+const react_dom_1 = require("react-dom");
+const AccountInfo = ({ label, currentInfo, isSuccess, isError, clearState, errorMessage = "An error occurred, please try again", children, 'data-testid': dataTestid }) => {
+    const { state, close, toggle } = (0, use_toggle_state_1.default)();
+    const { pending } = (0, react_dom_1.useFormStatus)();
+    const handleToggle = () => {
+        clearState();
+        setTimeout(() => toggle(), 100);
+    };
+    (0, react_2.useEffect)(() => {
+        if (isSuccess) {
+            close();
+        }
+    }, [isSuccess, close]);
+    return ((0, jsx_runtime_1.jsxs)("div", { className: "text-small-regular", "data-testid": dataTestid, children: [(0, jsx_runtime_1.jsxs)("div", { className: "flex items-end justify-between", children: [(0, jsx_runtime_1.jsxs)("div", { className: "flex flex-col", children: [(0, jsx_runtime_1.jsx)("span", { className: "uppercase text-ui-fg-base", children: label }), (0, jsx_runtime_1.jsx)("div", { className: "flex items-center flex-1 basis-0 justify-end gap-x-4", children: typeof currentInfo === "string" ? ((0, jsx_runtime_1.jsx)("span", { className: "font-semibold", "data-testid": "current-info", children: currentInfo })) : (currentInfo) })] }), (0, jsx_runtime_1.jsx)("div", { children: (0, jsx_runtime_1.jsx)(ui_1.Button, { variant: "secondary", className: "w-[100px] min-h-[25px] py-1", onClick: handleToggle, type: state ? "reset" : "button", "data-testid": "edit-button", "data-active": state, children: state ? "Cancel" : "Edit" }) })] }), (0, jsx_runtime_1.jsx)(react_1.Disclosure, { children: (0, jsx_runtime_1.jsx)(react_1.Disclosure.Panel, { static: true, className: (0, ui_1.clx)("transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden", {
+                        "max-h-[1000px] opacity-100": isSuccess,
+                        "max-h-0 opacity-0": !isSuccess,
+                    }), "data-testid": "success-message", children: (0, jsx_runtime_1.jsx)(ui_1.Badge, { className: "p-2 my-4", color: "green", children: (0, jsx_runtime_1.jsxs)("span", { children: [label, " updated succesfully"] }) }) }) }), (0, jsx_runtime_1.jsx)(react_1.Disclosure, { children: (0, jsx_runtime_1.jsx)(react_1.Disclosure.Panel, { static: true, className: (0, ui_1.clx)("transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden", {
+                        "max-h-[1000px] opacity-100": isError,
+                        "max-h-0 opacity-0": !isError,
+                    }), "data-testid": "error-message", children: (0, jsx_runtime_1.jsx)(ui_1.Badge, { className: "p-2 my-4", color: "red", children: (0, jsx_runtime_1.jsx)("span", { children: errorMessage }) }) }) }), (0, jsx_runtime_1.jsx)(react_1.Disclosure, { children: (0, jsx_runtime_1.jsx)(react_1.Disclosure.Panel, { static: true, className: (0, ui_1.clx)("transition-[max-height,opacity] duration-300 ease-in-out overflow-visible", {
+                        "max-h-[1000px] opacity-100": state,
+                        "max-h-0 opacity-0": !state,
+                    }), children: (0, jsx_runtime_1.jsxs)("div", { className: "flex flex-col gap-y-2 py-4", children: [(0, jsx_runtime_1.jsx)("div", { children: children }), (0, jsx_runtime_1.jsx)("div", { className: "flex items-center justify-end mt-2", children: (0, jsx_runtime_1.jsx)(ui_1.Button, { isLoading: pending, className: "w-full small:max-w-[140px]", type: "submit", "data-testid": "save-button", children: "Save changes" }) })] }) }) })] }));
+};
+exports.default = AccountInfo;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9zdG9yZWZyb250L3NyYy9tb2R1bGVzL2FjY291bnQvY29tcG9uZW50cy9hY2NvdW50LWluZm8vaW5kZXgudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBLDZDQUE4QztBQUM5QyxxQ0FBaUQ7QUFDakQsaUNBQWlDO0FBRWpDLG1GQUF3RDtBQUN4RCx5Q0FBeUM7QUFhekMsTUFBTSxXQUFXLEdBQUcsQ0FBQyxFQUNuQixLQUFLLEVBQ0wsV0FBVyxFQUNYLFNBQVMsRUFDVCxPQUFPLEVBQ1AsVUFBVSxFQUNWLFlBQVksR0FBRyxxQ0FBcUMsRUFDcEQsUUFBUSxFQUNSLGFBQWEsRUFBRSxVQUFVLEVBQ1IsRUFBRSxFQUFFO0lBQ3JCLE1BQU0sRUFBRSxLQUFLLEVBQUUsS0FBSyxFQUFFLE1BQU0sRUFBRSxHQUFHLElBQUEsMEJBQWMsR0FBRSxDQUFBO0lBRWpELE1BQU0sRUFBRSxPQUFPLEVBQUUsR0FBRyxJQUFBLHlCQUFhLEdBQUUsQ0FBQTtJQUVuQyxNQUFNLFlBQVksR0FBRyxHQUFHLEVBQUU7UUFDeEIsVUFBVSxFQUFFLENBQUE7UUFDWixVQUFVLENBQUMsR0FBRyxFQUFFLENBQUMsTUFBTSxFQUFFLEVBQUUsR0FBRyxDQUFDLENBQUE7SUFDakMsQ0FBQyxDQUFBO0lBRUQsSUFBQSxpQkFBUyxFQUFDLEdBQUcsRUFBRTtRQUNiLElBQUksU0FBUyxFQUFFLENBQUM7WUFDZCxLQUFLLEVBQUUsQ0FBQTtRQUNULENBQUM7SUFDSCxDQUFDLEVBQUUsQ0FBQyxTQUFTLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FBQTtJQUV0QixPQUFPLENBQ0wsaUNBQUssU0FBUyxFQUFDLG9CQUFvQixpQkFBYyxVQUFVLGFBQ3pELGlDQUFLLFNBQVMsRUFBQyxnQ0FBZ0MsYUFDN0MsaUNBQUssU0FBUyxFQUFDLGVBQWUsYUFDNUIsaUNBQU0sU0FBUyxFQUFDLDJCQUEyQixZQUFFLEtBQUssR0FBUSxFQUMxRCxnQ0FBSyxTQUFTLEVBQUMsc0RBQXNELFlBQ2xFLE9BQU8sV0FBVyxLQUFLLFFBQVEsQ0FBQyxDQUFDLENBQUMsQ0FDakMsaUNBQU0sU0FBUyxFQUFDLGVBQWUsaUJBQWEsY0FBYyxZQUFFLFdBQVcsR0FBUSxDQUNoRixDQUFDLENBQUMsQ0FBQyxDQUNGLFdBQVcsQ0FDWixHQUNHLElBQ0YsRUFDTiwwQ0FDRSx1QkFBQyxXQUFNLElBQ0wsT0FBTyxFQUFDLFdBQVcsRUFDbkIsU0FBUyxFQUFDLDZCQUE2QixFQUN2QyxPQUFPLEVBQUUsWUFBWSxFQUNyQixJQUFJLEVBQUUsS0FBSyxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLFFBQVEsaUJBQ3BCLGFBQWEsaUJBQ1osS0FBSyxZQUVqQixLQUFLLENBQUMsQ0FBQyxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsTUFBTSxHQUNuQixHQUNMLElBQ0YsRUFHTix1QkFBQyxrQkFBVSxjQUNULHVCQUFDLGtCQUFVLENBQUMsS0FBSyxJQUNmLE1BQU0sUUFDTixTQUFTLEVBQUUsSUFBQSxRQUFHLEVBQ1osMEVBQTBFLEVBQzFFO3dCQUNFLDRCQUE0QixFQUFFLFNBQVM7d0JBQ3ZDLG1CQUFtQixFQUFFLENBQUMsU0FBUztxQkFDaEMsQ0FDRixpQkFDVyxpQkFBaUIsWUFFN0IsdUJBQUMsVUFBSyxJQUFDLFNBQVMsRUFBQyxVQUFVLEVBQUMsS0FBSyxFQUFDLE9BQU8sWUFDdkMsNkNBQU8sS0FBSyw0QkFBNEIsR0FDbEMsR0FDUyxHQUNSLEVBR2IsdUJBQUMsa0JBQVUsY0FDVCx1QkFBQyxrQkFBVSxDQUFDLEtBQUssSUFDZixNQUFNLFFBQ04sU0FBUyxFQUFFLElBQUEsUUFBRyxFQUNaLDBFQUEwRSxFQUMxRTt3QkFDRSw0QkFBNEIsRUFBRSxPQUFPO3dCQUNyQyxtQkFBbUIsRUFBRSxDQUFDLE9BQU87cUJBQzlCLENBQ0YsaUJBQ1csZUFBZSxZQUUzQix1QkFBQyxVQUFLLElBQUMsU0FBUyxFQUFDLFVBQVUsRUFBQyxLQUFLLEVBQUMsS0FBSyxZQUNyQywyQ0FBTyxZQUFZLEdBQVEsR0FDckIsR0FDUyxHQUNSLEVBRWIsdUJBQUMsa0JBQVUsY0FDVCx1QkFBQyxrQkFBVSxDQUFDLEtBQUssSUFDZixNQUFNLFFBQ04sU0FBUyxFQUFFLElBQUEsUUFBRyxFQUNaLDJFQUEyRSxFQUMzRTt3QkFDRSw0QkFBNEIsRUFBRSxLQUFLO3dCQUNuQyxtQkFBbUIsRUFBRSxDQUFDLEtBQUs7cUJBQzVCLENBQ0YsWUFFRCxpQ0FBSyxTQUFTLEVBQUMsNEJBQTRCLGFBQ3pDLDBDQUFNLFFBQVEsR0FBTyxFQUNyQixnQ0FBSyxTQUFTLEVBQUMsb0NBQW9DLFlBQ2pELHVCQUFDLFdBQU0sSUFDTCxTQUFTLEVBQUUsT0FBTyxFQUNsQixTQUFTLEVBQUMsNEJBQTRCLEVBQ3RDLElBQUksRUFBQyxRQUFRLGlCQUNELGFBQWEsNkJBR2xCLEdBQ0wsSUFDRixHQUNXLEdBQ1IsSUFDVCxDQUNQLENBQUE7QUFDSCxDQUFDLENBQUE7QUFFRCxrQkFBZSxXQUFXLENBQUEifQ==

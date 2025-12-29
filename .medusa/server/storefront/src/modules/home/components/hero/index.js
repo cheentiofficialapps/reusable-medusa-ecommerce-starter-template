@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const icons_1 = require("@medusajs/icons");
+const ui_1 = require("@medusajs/ui");
+const Hero = () => {
+    return ((0, jsx_runtime_1.jsx)("div", { className: "h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle", children: (0, jsx_runtime_1.jsxs)("div", { className: "absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6", children: [(0, jsx_runtime_1.jsxs)("span", { children: [(0, jsx_runtime_1.jsx)(ui_1.Heading, { level: "h1", className: "text-3xl leading-10 text-ui-fg-base font-normal", children: "Ecommerce Starter Template" }), (0, jsx_runtime_1.jsx)(ui_1.Heading, { level: "h2", className: "text-3xl leading-10 text-ui-fg-subtle font-normal", children: "Powered by Medusa and Next.js" })] }), (0, jsx_runtime_1.jsx)("a", { href: "https://github.com/medusajs/nextjs-starter-medusa", target: "_blank", children: (0, jsx_runtime_1.jsxs)(ui_1.Button, { variant: "secondary", children: ["View on GitHub", (0, jsx_runtime_1.jsx)(icons_1.Github, {})] }) })] }) }));
+};
+exports.default = Hero;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi8uLi9zdG9yZWZyb250L3NyYy9tb2R1bGVzL2hvbWUvY29tcG9uZW50cy9oZXJvL2luZGV4LnRzeCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSwyQ0FBd0M7QUFDeEMscUNBQThDO0FBRTlDLE1BQU0sSUFBSSxHQUFHLEdBQUcsRUFBRTtJQUNoQixPQUFPLENBQ0wsZ0NBQUssU0FBUyxFQUFDLHlFQUF5RSxZQUN0RixpQ0FBSyxTQUFTLEVBQUMsOEZBQThGLGFBQzNHLDZDQUNFLHVCQUFDLFlBQU8sSUFDTixLQUFLLEVBQUMsSUFBSSxFQUNWLFNBQVMsRUFBQyxpREFBaUQsMkNBR25ELEVBQ1YsdUJBQUMsWUFBTyxJQUNOLEtBQUssRUFBQyxJQUFJLEVBQ1YsU0FBUyxFQUFDLG1EQUFtRCw4Q0FHckQsSUFDTCxFQUNQLDhCQUNFLElBQUksRUFBQyxtREFBbUQsRUFDeEQsTUFBTSxFQUFDLFFBQVEsWUFFZix3QkFBQyxXQUFNLElBQUMsT0FBTyxFQUFDLFdBQVcsK0JBRXpCLHVCQUFDLGNBQU0sS0FBRyxJQUNILEdBQ1AsSUFDQSxHQUNGLENBQ1AsQ0FBQTtBQUNILENBQUMsQ0FBQTtBQUVELGtCQUFlLElBQUksQ0FBQSJ9
